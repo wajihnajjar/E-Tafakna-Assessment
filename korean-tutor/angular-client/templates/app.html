@@ -1,0 +1,22 @@
+<div>
+  <div class="nav">
+    <span class="logo">Korean Tutor</span>
+    <span
+      ng-class="$ctrl.view === 'phrases' ? 'nav-selected' : 'nav-unselected'"
+      ng-click="$ctrl.changeView('phrases')"
+    >
+      Phrase List
+    </span>
+    <span
+      ng-class="$ctrl.view === 'practice' ? 'nav-selected' : 'nav-unselected'"
+      ng-click="$ctrl.changeView('practice')"
+    >
+      Practice
+    </span>
+  </div>
+
+  <div class="main">
+    <phrase-list ng-if="$ctrl.view === 'phrases'"></phrase-list>
+    <practice ng-if="$ctrl.view === 'practice'"></practice>
+  </div>
+</div>

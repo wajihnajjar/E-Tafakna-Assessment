@@ -14,7 +14,7 @@ class App extends React.Component {
   }
 
   changeView(option) {
-    this.setState({
+    this.setState({ 
       view: option
     });
   }

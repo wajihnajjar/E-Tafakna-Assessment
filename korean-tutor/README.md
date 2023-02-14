@@ -1,8 +1,5 @@
 # Korean Tutor
 
-## Copyright
-
-&copy; 2018 Hack Reactor.  This material is copyrighted by Hack Reactor and may not be distributed to the public
 
 ## Prompt
 
@@ -16,33 +13,32 @@ For the purposes of this application, a "phrase" consists of a word or short sen
  - in English
  - in its [Romanized](https://en.wikipedia.org/wiki/Romanization_of_Korean) form, provided solely as an approximate pronunciation aid to non-Korean speakers.
 
-Your front end will display views created from data in a [MySQL](https://dev.mysql.com/doc/refman/5.7/en/) database. You will have the choice of using either [AngularJS](https://angularjs.org/) or [React](https://facebook.github.io/react/), and will serve your application with a [NodeJS](https://nodejs.org/) web server, using [ExpressJS](https://expressjs.com/).
+Your front end will display views created from data in a [MySQL](https://dev.mysql.com/doc/refman/5.7/en/) database. You will  use [React](https://facebook.github.io/react/), and will serve your application with a [NodeJS](https://nodejs.org/) web server, using [ExpressJS](https://expressjs.com/).
 
 **BEFORE CONTINUING you must confirm you are running MySQL version 5.7** 
 To check the version of the installed MySQL server: on Mac run `mysql_config --version` in the terminal; on Windows run `mysql -V` in the terminal and check the value printed for `Distrib`. **If you are running something other than 5.7.x, you must speak with your Technical Mentor before you can move on.**
 
 NAME WHICH FRONT END FRAMEWORK YOU WILL BE USING FOR THE ASSESSMENT HERE:
 
-* *[AngularJS or React]*
+* *[  React]*
 
 HOW TO START THIS APP
 * *[Modify this section to tell graders how to start your app]*
 
-By design, this assessment contains more work than you will be able to complete in a day, so don't be concerned about not completing all of the steps below. Rather, please work on the following steps **in order**, moving on to the next step only after the one you are working on is complete. **Commit frequently** with informative messages. While there are instructions to commit at the end of each step, these should not be your only commits.
-
+By design, this assessment contains more work than you will be able to complete in a day, so don't be concerned about not completing all of the steps below. Rather, please work on the following steps **in order**, moving on to the next step only after the one you are working on is complete
 ---
 ### Before You Begin
 **Complete these setup tasks**:
 
-- [ ] In your terminal, navigate to this assessment's `korean-tutor` directory and run `git remote rm origin` to prevent yourself from accidentally pushing your code during the assessment.
+
 - [ ] Run `npm install` inside the `korean-tutor` directory to install dependencies.
 - [ ] Ensure that MySQL Server is running on your computer (`mysql.server start`).
 - [ ] Create the database and tables using the provided `schema.sql`, following the directions provided in the comments to populate your database.
   - *NOTE* You may also need to modify the `user`, `root`, and `password` properties inside `database-mysql/config.js`.
 - [ ] In `server/index.js`, uncomment the lines of code corresponding to your choice of framework.
 - [ ] Serve your application from the provided ExpressJS web server.
-  - If using Angular or Backbone, start your application with the command `npm start`.
-  - If using React, start your application with two commands, `npm run react-dev` and `npm start`, in two separate terminal tabs. For more information about Webpack, take a look at [the Webpack Docs](https://webpack.github.io/docs/).
+  -  using React, start your application with two commands, `npm run react-dev` and `npm start`, in two separate terminal tabs. For more information about Webpack, take a look at [the Webpack Docs](https://webpack.github.io/docs/).
+  - Your React app should be running in `localhost:3000` (use browser to see your project any change happen in react folder should be visible in your localhost )
 
 **WHEN THESE TASKS ARE COMPLETE:** proceed to Step One.
 
@@ -60,7 +56,6 @@ By design, this assessment contains more work than you will be able to complete 
 - [ ] In the Express server `server/index.js`, complete the request handler that will respond to `GET` requests to `/api/phrases` with JSON of the phrases stored in the database. You should use the `getAllPhrases` function that you wrote earlier in this step in your implementation.
 - [ ] Replace the sample data in your client with the data obtained from the server.
 
-**WHEN THIS STEP IS COMPLETE:**  make a commit with the message "complete step one"
 
 ---
 
@@ -73,11 +68,10 @@ By design, this assessment contains more work than you will be able to complete 
 
 **Implement this user story by doing the following:**
 
-- [ ] Refactor the **Practice** component (in either the `angular-client` or `react-client` directory) to render one phrase with data obtained from the server. You may create or refactor other components as necessary.
+- [ ] Refactor the **Practice** component  to render one phrase with data obtained from the server. You may create or refactor other components as necessary.
 - [ ] Make your components respond to the user clicking any of the "status" buttons (`Got it`, `Almost`, or `Not yet`) by advancing to the next phrase.
   - Do not worry about storing the status which was clicked for now - this will be done in a later step.
 
-**WHEN THIS STEP IS COMPLETE:** make a commit with the message "complete step two"
 
 ---
 
@@ -95,7 +89,6 @@ By design, this assessment contains more work than you will be able to complete 
 - [ ] Refactor your client-side component(s) to display the text "Reveal Translation" by default instead of the English translation
 - [ ] Refactor your client-side component(s) to toggle between displaying "Reveal Translation" or the English translation when the user clicks that element.
 
-**WHEN THIS STEP IS COMPLETE:** make a commit with the message "complete step three"
 
 ---
 
@@ -112,8 +105,6 @@ By design, this assessment contains more work than you will be able to complete 
 - [ ] Inside `/database-mysql/index.js`, write a function `updatePhrase` which will locate a phrase in the database by its `id` property, then update its status.
 - [ ] Inside `/server/index.js`, write a request handler that will respond to `PATCH` requests to `/api/phrases/:phraseId` by updating the phrase with id `phraseId` in the database. You should use the `updatePhrase` function in your implementation.
 - [ ] Refactor your client-side components to respond to a user clicking a status button by sending a `PATCH` request to the server updating the status of the current phrase. Once this AJAX request is resolved, show a different phrase to the user.
-
-**WHEN THIS STEP IS COMPLETE:** make a commit with the message "complete step four"
 
 ---
 
@@ -134,7 +125,6 @@ By design, this assessment contains more work than you will be able to complete 
 - [ ] When all phrases have been marked with the status `Got it`, display a message congratulating the user for completing all of the phrases.
 - Take care not to alter the order in which phrases appear in the **Phrase List** view.
 
-**WHEN THIS STEP IS COMPLETE**: make a commit with the message "complete step five"
 
 ---
 
@@ -146,7 +136,6 @@ By design, this assessment contains more work than you will be able to complete 
 **Implement this user story by doing the following:**
 - [ ] Create or refactor any client-side components as necessary.
 
-**WHEN THIS STEP IS COMPLETE**: make a commit with the message "complete step six"
 
 ---
 
@@ -162,7 +151,6 @@ By design, this assessment contains more work than you will be able to complete 
 - [ ] Create or refactor any server request handlers as necessary.
 - [ ] Create or refactor any client-side components as necessary.
 
-**WHEN THIS STEP IS COMPLETE:** make a commit with the message "complete step seven"
 
 ---
 
@@ -177,7 +165,6 @@ By design, this assessment contains more work than you will be able to complete 
 
 *NOTE* - There are a few SM2 implementations available on npm. Do not use these packages or reference their source code in your implementation.
 
-**WHEN THIS STEP IS COMPLETE:** make a commit with the message "complete step eight"
 
 ---
 
@@ -195,14 +182,11 @@ By design, this assessment contains more work than you will be able to complete 
 - [ ] Create or refactor any server request handlers as necessary.
 - [ ] Create or refactor any client-side components as necessary.
 
-**WHEN THIS STEP IS COMPLETE:** make a commit with the message "complete step nine"
-
 ---
 
 ## Available Resources
 
 * [Postman](https://www.getpostman.com/)
-* [AngularJS Docs](https://angularjs.org/)
 * [ReactJS Docs](https://facebook.github.io/react/)
 * [Webpack Docs](https://webpack.github.io/docs/)
 * [Babel Docs](https://babeljs.io/docs/setup/)
